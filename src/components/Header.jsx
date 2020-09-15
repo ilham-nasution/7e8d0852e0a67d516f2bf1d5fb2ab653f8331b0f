@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import LocationModal from "./LocationModal";
 
 const Row = styled.div`
   display: flex;
   align-items: center;
+  padding-top: 8px;
+  padding-left: 8px;
 `;
 
 const Title = styled.p`
@@ -35,17 +38,26 @@ const ExpandIcon = styled.span`
 `;
 
 const Header = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
-    <Row>
-      <BackArrow className="material-icons">arrow_back</BackArrow>
-      <div>
-        <Title>ALAMAT PENGATARAN</Title>
-        <Location>
-          Tokopedia Tower{" "}
-          <ExpandIcon className="material-icons">expand_more</ExpandIcon>
-        </Location>
-      </div>
-    </Row>
+    <>
+      {showModal && <LocationModal handleModal={handleModal} />}
+      <Row>
+        <BackArrow className="material-icons">arrow_back</BackArrow>
+        <div>
+          <Title>ALAMAT PENGANTARAN</Title>
+          <Location onClick={handleModal}>
+            Tokopedia Tower{" "}
+            <ExpandIcon className="material-icons">expand_more</ExpandIcon>
+          </Location>
+        </div>
+      </Row>
+    </>
   );
 };
 
