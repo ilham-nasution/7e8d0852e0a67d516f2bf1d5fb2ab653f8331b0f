@@ -26,7 +26,7 @@ const INITIAL_STATE = [
 ];
 
 const Calendar = () => {
-  const [days, setDays] = useState(INITIAL_STATE);
+  const [days] = useState(INITIAL_STATE);
 
   return (
     <CalendarBtnList>
