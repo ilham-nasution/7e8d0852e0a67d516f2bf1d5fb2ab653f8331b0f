@@ -5,8 +5,8 @@ import LocationModal from "./LocationModal";
 const Row = styled.div`
   display: flex;
   align-items: center;
-  padding-top: 8px;
-  padding-left: 8px;
+  padding-top: 16px;
+  padding-left: 16px;
 `;
 
 const Title = styled.p`

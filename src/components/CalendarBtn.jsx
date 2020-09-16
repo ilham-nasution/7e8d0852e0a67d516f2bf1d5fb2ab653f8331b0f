@@ -29,7 +29,7 @@ const CalendarBtn = ({ day, date }) => {
   return (
     <CalBtn>
       <Day>{day}</Day>
-      <Date>{date + 1}</Date>
+      <Date>{date}</Date>
     </CalBtn>
   );
 };
