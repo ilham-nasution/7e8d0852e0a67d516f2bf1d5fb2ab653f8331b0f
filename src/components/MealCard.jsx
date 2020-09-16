@@ -18,8 +18,6 @@ const CardImg = styled.img`
 
 const CardContent = styled.div`
   padding: 8px 16px;
-  width: 100%;
-  height: 35%;
 `;
 
 const Rating = styled.p`
@@ -54,6 +52,7 @@ const Price = styled.p`
 const CartBtn = styled.button`
   outline: none;
   border: none;
+  cursor: pointer;
   background-color: #f9234a;
   color: #f1f1f2;
   padding: 8px 16px;
@@ -62,12 +61,12 @@ const CartBtn = styled.button`
 
 const Row = styled.div`
   display: flex;
-  width: 90%;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
 `;
 
-const MealCard = () => {
+const MealCard = ({ handleCart }) => {
   return (
     <Card>
       <CardImg
@@ -86,7 +85,7 @@ const MealCard = () => {
         <RestaurantName>by Kulina • Uptown Lunch</RestaurantName>
         <Row>
           <Price>Rp 35,000</Price>
-          <CartBtn>ADD +</CartBtn>
+          <CartBtn onClick={handleCart}>ADD +</CartBtn>
         </Row>
       </CardContent>
     </Card>

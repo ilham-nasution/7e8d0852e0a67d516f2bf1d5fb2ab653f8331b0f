@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import CalendarBtnActive from "./CalendarBtnActive";
 import CalendarBtn from "./CalendarBtn";
 import styled from "styled-components";
-import CalendarBtnDisabled from "./CalendarBtnDisabled";
 
 const CalendarBtnList = styled.div`
   display: flex;
@@ -35,13 +33,13 @@ const Calendar = () => {
       {days.map((day, index) => {
         if (day.active) {
           return (
-            <CalendarBtnActive key={index} day={day.day} date={day.date} />
+            <CalendarBtn active key={index} day={day.day} date={day.date} />
           );
         } else if (day.day !== "MIN" && day.day !== "SAB") {
           return <CalendarBtn key={index} day={day.day} date={day.date} />;
         } else {
           return (
-            <CalendarBtnDisabled key={index} day={day.day} date={day.date} />
+            <CalendarBtn disabled key={index} day={day.day} date={day.date} />
           );
         }
       })}
